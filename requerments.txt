@@ -1,0 +1,7 @@
+django
+pymorphy2
+nltk
+spacy
+gensim
+python-memcached
+transliterate

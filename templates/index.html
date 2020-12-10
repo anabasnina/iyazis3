@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Index</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <h1>Text summarize system</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <ol>
+            <li><a href="/upload/">Upload</a> files into system</li>
+            <li>Choose text to summarize</li>
+            <li>Choose method of summarization</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        {% for doc in documents %}
+            <div class="row justify-content-around my-1">
+                <div class="col-2">{{ doc.title }}</div>
+                <div class="col-3 btn-group" role="group">
+                    <a type="button" class="btn btn-info" href="/document/{{ doc.id }}/own/">Own</a>
+                    <a type="button" class="btn btn-info" href="/document/{{ doc.id }}/spacy/">Spacy</a>
+                    <a type="button" class="btn btn-info" href="/document/{{ doc.id }}/gensim/">Gensim</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+</body>
+</html>
